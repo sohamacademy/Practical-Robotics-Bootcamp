@@ -34,8 +34,7 @@ void setup()
     
     Serial.println("Couldn't find RTC");
     while (1){
-        Serial.print("DATE:");
-     Serial.println(F(__DATE__));
+      Serial.println("Check your RTC Module Connection");
       }
   }
   if (rtc.lostPower()) {
