@@ -46,16 +46,16 @@ void Bluetooth_handle()
 
   switch(bt_data)
       {
-        case '1': digitalWrite(Light, HIGH); break;    // if '1' received Turn on Light
-        case '2': digitalWrite(Light, LOW); break;     // if '2' received Turn off Light
-        case '3': digitalWrite(Fan, HIGH);  break;     // if '3' received Turn on Fan
-        case '4': digitalWrite(Fan, LOW);  break;      // if '4' received Turn off Fan
-        case '5': digitalWrite(Tv, HIGH); break;       // if '5' received Turn on Tv
-        case '6': digitalWrite(Tv, LOW); break;        // if '6' received Turn off Tv
-        case '7': digitalWrite(Ac, HIGH); break;       // if '7' received Turn on Ac
-        case '8': digitalWrite(Ac, LOW);  break;       // if '8' received Turn off Ac
-        case '9': all_Switch_ON(); break;              // if '9' received Turn on all 
-        case '0': all_Switch_OFF(); break;             // if '0' received Turn off all 
+        case 'a': digitalWrite(Light, HIGH); break;    // if 'a' received Turn on Light
+        case 'b': digitalWrite(Light, LOW); break;     // if 'b' received Turn off Light
+        case 'c': digitalWrite(Fan, HIGH);  break;     // if 'c' received Turn on Fan
+        case 'd': digitalWrite(Fan, LOW);  break;      // if 'd' received Turn off Fan
+        case 'e': digitalWrite(Tv, HIGH); break;       // if 'e' received Turn on Tv
+        case 'f': digitalWrite(Tv, LOW); break;        // if 'f' received Turn off Tv
+        case 'g': digitalWrite(Ac, HIGH); break;       // if 'g' received Turn on Ac
+        case 'h': digitalWrite(Ac, LOW);  break;       // if 'h' received Turn off Ac
+        case 'i': all_Switch_ON(); break;              // if 'i' received Turn on all 
+        case 'j': all_Switch_OFF(); break;             // if 'j' received Turn off all 
         default : break;
       }
 }
@@ -80,10 +80,10 @@ void setup()
   digitalWrite(Tv, HIGH);
   digitalWrite(Ac, HIGH);
   delay(100);
-  digitalWrite(Light, HIGH);
-  digitalWrite(Fan, HIGH);
-  digitalWrite(Tv, HIGH);
-  digitalWrite(Ac, HIGH);
+  digitalWrite(Light, LOW);
+  digitalWrite(Fan, LOW);
+  digitalWrite(Tv, LOW);
+  digitalWrite(Ac, LOW);
   delay(100);
 
 }
