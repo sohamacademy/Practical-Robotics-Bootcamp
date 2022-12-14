@@ -104,8 +104,8 @@ IR_val = digitalRead(IR_PIN);
           break;
       }
     }
-    while(!digitalRead(IR_PIN));
-//      delay(2500); // wait for 2.5 sec 
+//    while(!digitalRead(IR_PIN));
+      delay(2500); // wait for 2.5 sec 
       Lcd.clear(); // the display is cleared
       Lcd.setCursor(0, 0); //set the cursor position at the column = 0 , row = 0 
       Lcd.print(Msg1);
