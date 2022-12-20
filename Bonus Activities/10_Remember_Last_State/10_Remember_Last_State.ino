@@ -1,8 +1,6 @@
 #include <EEPROM.h>
-
 const int buttonPin = 8;    // pushbutton pin
 const int ledPin = 4;       // LED pin
-
 int ledState;                // variable to hold the led state
 int buttonState;             // the current reading from the input pin
 int lastButtonState = LOW;   // the previous reading from the input pin
@@ -15,7 +13,7 @@ long debounceDelay = 50;    // the debounce time; increase if the output flicker
 
 void setup() {
   // set input and output
-  pinMode(buttonPin, INPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
   pinMode(ledPin, OUTPUT);
 
   // set initial LED state
@@ -23,7 +21,7 @@ void setup() {
 
   // initialize serial monitor
   Serial.begin (9600);
-
+  
   //check stored LED state on EEPROM using function defined at the end of the code
   checkLedState(); 
 }
@@ -31,7 +29,6 @@ void setup() {
 void loop() {
   // read the state of the switch into a local variable
   int reading = digitalRead(buttonPin);
-
   if(reading != lastButtonState) {
     // reset the debouncing timer
     lastDebounceTime = millis();
@@ -40,13 +37,11 @@ void loop() {
   if((millis() - lastDebounceTime) > debounceDelay) {
     // whatever the reading is at, it's been there for longer
     // than the debounce delay, so take it as the actual current state:
-
     // if the button state has changed:
     if(reading != buttonState) {
-      buttonState = reading;
-
+        buttonState = reading;
       // only toggle the LED if the new button state is HIGH
-      if(buttonState == HIGH) {
+      if(buttonState == LOW) {
         ledState = !ledState;
       }
     }
@@ -56,7 +51,7 @@ void loop() {
   digitalWrite(ledPin, ledState);
   // save the current LED state in the EEPROM
   EEPROM.update(0, ledState);
-  // save the reading.  Next time through the loop,
+  // save the reading.  Next time ṭ the loop,
   // it'll be the lastButtonState
   lastButtonState = reading;
 }
