@@ -1,3 +1,9 @@
+/*****************************************************
+  Activity Name : Potentiometer Controlled Servo Motor
+  Organisation: Soham Academy Of Human Excellence
+  Website: https://ria.sohamacademy.org/
+****************************************************/
+
 #include <Servo.h>
 Servo myServo;  // create servo object to control a servo
 

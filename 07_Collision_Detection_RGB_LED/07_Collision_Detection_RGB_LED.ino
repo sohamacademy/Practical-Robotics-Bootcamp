@@ -1,3 +1,9 @@
+/*****************************************************
+  Activity Name: Collision Detection using RGB LED
+  Organisation: Soham Academy Of Human Excellence
+  Website: https://ria.sohamacademy.org/
+****************************************************/
+
 #define TRIG_PIN 26 // ESP32 pin GIOP26 connected to Ultrasonic Sensor's TRIG pin
 #define ECHO_PIN 25 // ESP32 pin GIOP25 connected to Ultrasonic Sensor's ECHO pin
 
@@ -27,32 +33,30 @@ void loop() {
 
   // calculate the distance
   distance_cm = 0.017 * duration_us;
-
+  Serial.println(distance_cm);
+  
   if( distance_cm < 10){
- Serial.println(distance_cm);
- analogWrite(redPin,255);
-  analogWrite(greenPin,0);
-  analogWrite(bluePin,0); 
-  delay(500);
+  digitalWrite(redPin,LOW);
+  digitalWrite(greenPin,HIGH);
+  digitalWrite(bluePin,HIGH);
+  delay(50);
   }
   else if(distance_cm < 20){
-  //yellow
-  analogWrite(redPin,255);
-  analogWrite(greenPin,255);
-  analogWrite(bluePin,0);
-  delay(500);
+  digitalWrite(redPin,LOW);
+  digitalWrite(greenPin,LOW);
+  digitalWrite(bluePin,HIGH);
+  delay(50);
   }
   else if(distance_cm < 30){
-  //green
-  analogWrite(redPin,0);
-  analogWrite(greenPin,255);
-  analogWrite(bluePin,0);
-  delay(500);
+  digitalWrite(redPin,HIGH);
+  digitalWrite(greenPin,LOW);
+  digitalWrite(bluePin,HIGH);
+  delay(50);
   }
   else{
-  analogWrite(redPin,0);
-  analogWrite(greenPin,0);
-  analogWrite(bluePin,0);
-  delay(500);
+  digitalWrite(redPin,HIGH);
+  digitalWrite(greenPin,HIGH);
+  digitalWrite(bluePin,HIGH);
+  delay(50);
   }
 }

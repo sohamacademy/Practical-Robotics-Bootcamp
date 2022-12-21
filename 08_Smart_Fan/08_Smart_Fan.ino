@@ -4,8 +4,8 @@
   Website: https://ria.sohamacademy.org/
 ****************************************************/
 
-const int trigPin = 23;               //esp32 d23 pin connected to trig Pin of the ultrasonic sensor
-const int echoPin = 22;               //esp32 d22 pin connected to echo Pin of the ultrasonic sensor
+const int trigPin = 22;               //esp32 d23 pin connected to trig Pin of the ultrasonic sensor
+const int echoPin = 23;               //esp32 d22 pin connected to echo Pin of the ultrasonic sensor
 const int Input3 = 26;                 //esp32 d26 pin connected to L293D pin input3
 const int Input4 = 27;                 //esp32 d27  pin connected to L293D pin input4
 

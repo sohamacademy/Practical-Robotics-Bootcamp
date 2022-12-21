@@ -1,8 +1,9 @@
 /*****************************************************
-  Activity Name: Counter Using IR Sensor
+  Activity Name: Counter using IR Sensor
   Organisation: Soham Academy Of Human Excellence
   Website: https://ria.sohamacademy.org/
 ****************************************************/
+
 int  aSegment = 10;
 int  bSegment = 11;
 int  cSegment = 5;
@@ -22,7 +23,6 @@ void setup()
   Serial.begin(9600);
   Serial.print("IR state:");
   Serial.println(digitalRead(irPin));
-
   pinMode(aSegment, OUTPUT);
   pinMode(bSegment, OUTPUT);
   pinMode(cSegment, OUTPUT);

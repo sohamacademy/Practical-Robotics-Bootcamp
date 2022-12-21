@@ -1,3 +1,8 @@
+/*****************************************************
+  Activity Name : EEPROM Remember LED State
+  Organisation: Soham Academy Of Human Excellence
+  Website: https://ria.sohamacademy.org/
+****************************************************/
 #include <EEPROM.h>
 const int buttonPin = 8;    // pushbutton pin
 const int ledPin = 4;       // LED pin
